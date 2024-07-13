@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Input</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <a href="{{ url_for('index') }}" class="back-button">← Back to Home</a>
+        <h1>Text Input</h1>
+        <form method="post">
+            <label for="text">Enter text here:</label>
+            <textarea id="text" name="text" placeholder="Enter text for analysis..."></textarea>
+            <button type="submit">Analyze</button>
+        </form>
+        {% if result %}
+            <div class="result">
+                <p><strong>Language Code:</strong> {{ result.split(', ')[0] }}</p>
+                <p><strong>Language:</strong> {{ result.split(', ')[1] }}</p>
+                <p><strong>Sentiment:</strong> {{ sentiment }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

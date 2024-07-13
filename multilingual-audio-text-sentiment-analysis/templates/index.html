@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-front">
+                    <h1>Text Analysis</h1>
+                    <p>Analyze text for language detection and sentiment analysis.</p>
+                </div>
+                <div class="card-back">
+                    <a href="{{ url_for('text_input') }}" class="button-link">Go to Text Analysis</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-front">
+                    <h1>Audio Analysis</h1>
+                    <p>Upload an audio file for language detection and sentiment analysis.</p>
+                </div>
+                <div class="card-back">
+                    <a href="{{ url_for('audio_input') }}" class="button-link">Go to Audio Analysis</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

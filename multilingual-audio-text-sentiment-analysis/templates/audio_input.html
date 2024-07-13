@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Input</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <a href="{{ url_for('index') }}" class="back-button">Back to Home</a>
+        <h1>Audio Input</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <label for="audio">Upload Audio File:</label>
+            <input type="file" id="audio" name="audio" accept="audio/*" required />
+            <button type="submit">Upload</button>
+        </form>
+        {% if audio_result %}
+            <div class="result">
+                <p><strong>{{ audio_result }}</strong></p>
+                <p>Transcribed Text: {{ transcribed_text }}</p>
+                <p>Sentiment: {{ sentiment }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
